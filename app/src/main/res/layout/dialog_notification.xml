@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:padding="@dimen/space10"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:text="Friendy would Like To Send\nYour Notification"
+        style="@style/headingText"/>
+
+    <TextView
+        android:textColor="@color/lightBlack"
+        android:padding="@dimen/space10"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notification_note"
+        style="@style/normalText"/>
+
+    <View
+        android:layout_marginTop="@dimen/space5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_dont_allow"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:padding="@dimen/space10"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="2.4"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_allow"
+            style="@style/normalText"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2">
+
+            <View
+                android:layout_width="@dimen/space1"
+                android:layout_height="@dimen/space45"
+                android:background="@android:color/darker_gray"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_allow"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:padding="@dimen/space10"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="2.4"
+            android:layout_height="wrap_content"
+            android:text="@string/allow"
+            style="@style/normalText"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

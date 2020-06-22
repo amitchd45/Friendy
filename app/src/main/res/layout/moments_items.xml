@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_moments"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/space10"
+                    android:paddingTop="@dimen/space20"
+                    android:paddingBottom="@dimen/space20"
+                    android:paddingLeft="@dimen/space10"
+                    android:paddingRight="@dimen/space10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/userImage"
+                        android:layout_width="@dimen/space60"
+                        android:layout_height="@dimen/space60"
+                        android:src="@drawable/girl_1"/>
+
+                    <LinearLayout
+                        android:layout_toRightOf="@id/userImage"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/space10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/userName"
+                            android:layout_toRightOf="@id/image1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Amit Kumar"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text20"/>
+
+                        <TextView
+                            android:id="@+id/tv_postTime"
+                            android:text="04-05-2020"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Title"
+                    android:textSize="@dimen/text18"
+                    android:layout_marginLeft="@dimen/space10"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/space5"
+                    android:id="@+id/tv_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descriptions"
+                    android:textSize="@dimen/text16"
+                    android:layout_marginLeft="@dimen/space10"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space250">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/postImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_launcher_background"
+                        android:scaleType="centerCrop"
+                        app:riv_corner_radius="@dimen/space8"
+                        android:layout_margin="@dimen/space10"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginBottom="@dimen/space10"
+                    android:layout_marginLeft="@dimen/space10"
+                    android:layout_marginRight="@dimen/space10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space60">
+
+                    <LinearLayout
+                        android:id="@+id/ll_comments"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/space10"
+                        android:background="@drawable/comment_bg"
+                        android:gravity="center"
+                        android:layout_width="@dimen/space140"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_chat_bubble1"
+                            android:tint="@color/gray"/>
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/space5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Comment"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/space10"
+                        android:layout_toRightOf="@id/ll_comments"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/space10"
+                        android:background="@drawable/comment_bg"
+                        android:gravity="center"
+                        android:layout_width="@dimen/space140"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_favorite_small"
+                            android:tint="@color/red"/>
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/space5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Like"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                    android:background="@color/light_grey"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

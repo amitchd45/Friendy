@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.solutions.friendy.Fragments.UploadRealPhotoFragment">
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/topbar"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/space5"
+                android:layout_margin="@dimen/space5">
+
+                <RelativeLayout
+                    android:layout_margin="@dimen/space10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/iv_take_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/space300"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add"
+                            app:riv_corner_radius_top_left="@dimen/space5"
+                            app:riv_corner_radius_top_right="@dimen/space5" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_take_photo"
+                            android:paddingTop="@dimen/space5"
+                            android:paddingBottom="@dimen/space5"
+                            android:gravity="center_horizontal"
+                            android:background="@drawable/bottom_round_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="@dimen/space5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_photo_camera_black_24dp"
+                                android:tint="@android:color/white"/>
+
+                            <TextView
+                                android:gravity="center_horizontal"
+                                android:paddingTop="@dimen/space5"
+                                android:paddingBottom="@dimen/space5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@android:color/white"
+                                style="@style/headingText"
+                                android:text="@string/Add_Photo"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/normalText"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="Please upload  " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/normalText"
+                    android:textColor="@color/colorAccent"
+                    android:text="a real photo showing your face " />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/normalText"
+                    android:textColor="@color/appColor"
+                    android:text="clear " />
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/normalText"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="to get matches" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/space10"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:listitem="@layout/items_realphoto"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:id="@+id/rv_photoDemo"/>
+
+            <Button
+                android:visibility="visible"
+                android:id="@+id/btn_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get Start"
+                style="@style/buttonStyle"
+                android:layout_margin="@dimen/space20"
+                android:textAllCaps="true"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

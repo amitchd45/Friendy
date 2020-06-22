@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/space10"
+                android:padding="@dimen/space15"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:background="@color/appColor">
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:tint="@color/white"
+                    android:padding="@dimen/space2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close_black_24dp"
+                    android:layout_gravity="right"/>
+
+                <ImageView
+                    android:tint="@color/appColor"
+                    android:id="@+id/image"
+                    android:layout_width="@dimen/space70"
+                    android:layout_height="@dimen/space70"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/space10"
+                    android:background="@drawable/white_circle"
+                    android:src="@drawable/ic_flash"
+                    android:scaleType="fitXY" />
+                <TextView
+                    android:padding="@dimen/space5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Step-Up"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text16"/>
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Get seen by 10x more people"
+                    android:textSize="@dimen/text12"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#ECEAEA"
+                android:id="@+id/ll_main"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:weightSum="3"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="150dp">
+
+
+
+                <LinearLayout
+                    android:id="@+id/ll_twelvemonth1"
+                    android:layout_weight="1"
+                    android:background="@drawable/stroke_bg"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:paddingTop="@dimen/space2"
+                        android:paddingBottom="@dimen/space2"
+                        android:id="@+id/tv_one1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SAVE 41%"
+                        android:textSize="@dimen/text14"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/text_bg"
+                        android:gravity="center"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/space10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:textColor="@color/appColor"
+                            android:id="@+id/tv_twelve1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="25"
+                            style="@style/textHeading"
+                            android:textSize="@dimen/text20"/>
+
+
+                        Step-Up<TextView
+                        android:id="@+id/tv_month_11"
+                        android:layout_toRightOf="@id/tv_twelve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Step_Up"
+                        android:textSize="@dimen/text12"
+                        android:layout_alignBottom="@id/tv_twelve"
+                        android:textColor="@color/appColor"
+                        style="@style/textSmall" />
+
+
+                        <TextView
+                            android:id="@+id/tv_money1"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@id/tv_money_mol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs.29"
+                            android:textColor="@color/appColor"
+                            style="@style/textSmall" />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_threemonth2"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tv_two2"
+                        android:paddingTop="@dimen/space2"
+                        android:paddingBottom="@dimen/space2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SAVE 36%"
+                        android:textSize="@dimen/text14"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/text_bg"
+                        android:gravity="center"/>
+
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="@dimen/space10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:id="@+id/tv_three2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5"
+                            style="@style/textHeading"
+                            android:textSize="@dimen/text20"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_month_22"
+                            android:layout_toRightOf="@id/tv_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Step_Up"
+                            android:layout_alignBottom="@id/tv_three"
+                            style="@style/textSmall" />
+
+
+                        <TextView
+                            android:id="@+id/tv_money_3202"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@id/tv_money_mol_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs.40"
+                            android:textColor="@color/darkgrey"
+                            style="@style/textSmall" />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_onemonth3"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:padding="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:id="@+id/tv_one_month3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            style="@style/textHeading"
+                            android:textSize="@dimen/text20"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_month_33"
+                            android:layout_toRightOf="@id/tv_one_month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Step_Up"
+                            android:layout_alignBottom="@id/tv_one_month"
+                            style="@style/textSmall" />
+
+                        <TextView
+                            android:id="@+id/tv_money_mol_33"
+                            style="@style/textHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_one_month"
+                            android:layout_marginTop="5dp"
+                            android:text="Rs.50" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_Step_continue_with_pay1"
+                android:layout_below="@id/ll_main"
+                android:layout_width="match_parent"
+                android:textColor="@android:color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space20"
+                android:layout_marginRight="@dimen/space20"
+                android:layout_marginTop="@dimen/space20"
+                android:layout_marginBottom="@dimen/space20"
+                android:text="Step Up Now"
+                android:textAllCaps="false"
+                android:background="@drawable/button_bg"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

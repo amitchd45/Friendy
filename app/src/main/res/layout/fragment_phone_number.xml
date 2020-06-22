@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.PhoneNumberFragment">
+
+    <include layout="@layout/topbar"/>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/space10"
+        android:paddingTop="@dimen/space10"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_marginTop="@dimen/space10"
+            android:padding="@dimen/space10"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/toplogo"
+            android:layout_width="@dimen/space150"
+            android:layout_height="@dimen/space120"
+            android:src="@drawable/logo"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview"
+            android:layout_below="@id/toplogo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space50"
+            app:cardCornerRadius="@dimen/space2"
+            android:layout_margin="@dimen/space15">
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space6"
+                android:paddingRight="@dimen/space10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginRight="@dimen/space10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cell_phone" />
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    app:ccp_textSize="@dimen/space12"
+                    android:background="@drawable/rectangle_text"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccp_showFlag="false"
+                    app:ccp_contentColor="@android:color/darker_gray"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_autoFormatNumber="true"
+                    app:ccp_showNameCode="false" />
+
+                <EditText
+                    android:focusableInTouchMode="true"
+                    android:maxLength="11"
+                    android:id="@+id/et_phone"
+                    style="@style/normalText"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/space1"
+                    android:background="@android:color/transparent"
+                    android:hint="Phone Number"
+                    android:paddingLeft="@dimen/space6"
+                    android:textSize="@dimen/text14"
+                    android:paddingRight="@dimen/space10"
+                    android:drawablePadding="@dimen/space10" />
+
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_margin="@dimen/space20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            style="@style/buttonStyle"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="* phone number, we will never share with anyone."/>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,178 @@
+apply plugin: 'com.android.application'
+apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.solutions.friendy"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    splits {
+        abi {
+            reset()
+            include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        manifestPlaceholders = [file_provider: "com.solutions.friendy"]
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.facebook.shimmer:shimmer:0.4.0'
+
+//    implementation project(path: ':uikit')
+    implementation 'com.github.stfalcon:chatkit:0.3.3'
+
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+
+    def nav_version = "2.2.0"
+
+    implementation 'com.github.drawers:SpinnerDatePicker:2.0.1'
+
+
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    implementation 'com.google.android.material:material:1.2.0-alpha04'
+
+
+    //circleImage view
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    //Seekbar
+    implementation 'com.xw.repo:bubbleseekbar:3.20'
+
+    //Maps
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //country code picker
+    implementation 'com.hbb20:ccp:2.3.2'
+
+
+    //Rounded image
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // Drawer
+//    implementation 'com.infideap.drawerbehavior:drawer-behavior:0.1.5'
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    //circleIndicator
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+
+    //otp
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2'
+
+
+    implementation 'com.infideap.drawerbehavior:drawer-behavior:0.2.2'
+
+//    implementation project(':drawerbehavior')
+    implementation 'com.app.infideap.stylishwidget:stylish-widget:1.5.1'
+
+    //card stack
+
+    implementation('com.yuyakaido.android:card-stack-view:2.2.4')
+
+//switch button
+//    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+
+    //Seek Bar
+    implementation('com.zhouyou:signseekbar:1.0.6')
+
+    implementation('com.crystal:crystalrangeseekbar:1.1.3')
+
+    implementation 'com.tbuonomo:morph-bottom-navigation:1.0.1'
+
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //view model
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.0.0'
+
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
+
+    //retrofit
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+
+    //spinet animation
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+//Manjinder Sir
+    implementation 'com.github.manjhi:util_repo:0.1.2'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+//    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+
+
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'com.github.turing-tech:MaterialScrollBar:13.+'
+
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.10'
+
+    //Todo TagVIew below
+    //Image picker
+    //cometChat
+    implementation 'com.github.dhaval2404:imagepicker:1.7.1'
+
+//    implementation 'com.cometchat:pro-android-chat-sdk:2.0.3'
+    //cometchat
+    implementation 'com.cometchat:pro-android-chat-sdk:2.0.4-beta1'
+
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    implementation project(path: ':uikit')
+
+    implementation 'com.karumi:dexter:6.1.2'
+
+
+}

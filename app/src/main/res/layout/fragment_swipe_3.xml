@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.Swipe_3Fragment">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/space10"
+        android:padding="@dimen/space10"
+        android:layout_marginBottom="@dimen/space10"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chat"
+            style="@style/headingText"
+            android:textColor="@color/appColor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" to your matches to get\nto know them!"
+            style="@style/headingText"
+            android:textColor="@color/black"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:background="@drawable/gray_gradient"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/space10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bubble_chat"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

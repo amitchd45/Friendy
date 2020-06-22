@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.solutions.friendy.Fragments.LoginFragment">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:paddingTop="@dimen/space20"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/headingText"
+                        android:textSize="@dimen/text18"
+                        android:textColor="@android:color/black"
+                        android:text="Swipe " />
+
+                    <TextView
+                        android:textSize="@dimen/text18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/headingText"
+                        android:textColor="@color/colorAccent"
+                        android:text="right " />
+
+                    <TextView
+                        android:textSize="@dimen/text18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/headingText"
+                        android:textColor="@android:color/black"
+                        android:text="to like" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textSize="@dimen/text18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/headingText"
+                        android:textColor="@android:color/black"
+                        android:text="and " />
+
+                    <TextView
+                        android:textSize="@dimen/text18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/headingText"
+                        android:textColor="@color/blue"
+                        android:text="left " />
+
+                    <TextView
+                        android:textSize="@dimen/text18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/headingText"
+                        android:textColor="@android:color/black"
+                        android:text="to pass" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_above="@id/SliderDots"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/space20" />
+
+
+            </LinearLayout>
+
+            <me.relex.circleindicator.CircleIndicator
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/SliderDots"
+                android:layout_marginBottom="@dimen/space15"
+                app:ci_drawable_unselected="@android:color/darker_gray"
+                app:ci_drawable="@color/appColor" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/space10"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_phone_no"
+            android:layout_marginRight="@dimen/space20"
+            android:layout_marginLeft="@dimen/space20"
+            android:layout_marginBottom="@dimen/space15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/buttonStyle"
+            android:text="@string/continue_with_phone"/>
+
+
+        <Button
+            android:id="@+id/btn_continue_with_fb"
+            android:layout_marginRight="@dimen/space20"
+            android:layout_marginLeft="@dimen/space20"
+            android:layout_marginBottom="@dimen/space10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/buttonStyleBlue"
+            android:text="@string/continue_with_fb"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

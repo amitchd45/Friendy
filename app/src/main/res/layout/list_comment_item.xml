@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_second_layer"
+        android:layout_margin="@dimen/space10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/space45"
+            android:layout_height="@dimen/space45"
+            android:src="@drawable/ic_launcher_background"
+            android:id="@+id/iv_imageUser"/>
+
+        <LinearLayout
+            android:padding="@dimen/space10"
+            android:background="@drawable/comment_bg"
+            android:layout_toRightOf="@id/iv_imageUser"
+            android:layout_marginLeft="@dimen/space10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text16"/>
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text14"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/space70"
+        android:layout_marginRight="@dimen/space20"
+        android:layout_below="@id/rl_second_layer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020-04-28 09:08:59"
+            android:textSize="@dimen/text14"
+            android:id="@+id/tv_create_date" />
+
+        <TextView
+            android:padding="@dimen/space5"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textColor="@color/appColor"
+            android:textSize="@dimen/text14"
+            android:id="@+id/tv_Delete"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

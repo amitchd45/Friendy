@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context="com.solutions.friendy.Fragments.DiscoveryFragment">
+
+    <include layout="@layout/topbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:background="@drawable/light_gray_bg"
+                android:paddingTop="@dimen/space10"
+                android:paddingBottom="@dimen/space10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Only Man"
+                    android:textColor="@color/appColor"
+                    style="@style/headingText"
+                    android:padding="@dimen/space10"/>
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/space8"
+                android:background="@drawable/light_gray_bg"
+                android:paddingTop="@dimen/space10"
+                android:paddingBottom="@dimen/space10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Only Woman"
+                    android:textColor="@color/appColor"
+                    style="@style/headingText"
+                    android:padding="@dimen/space10"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_check_black_24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/space10"
+                    android:tint="@android:color/holo_green_dark"/>
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/space8"
+                android:background="@drawable/light_gray_bg"
+                android:paddingTop="@dimen/space10"
+                android:paddingBottom="@dimen/space10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Both Man And Woman"
+                    android:textColor="@color/appColor"
+                    style="@style/headingText"
+                    android:padding="@dimen/space10"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_check_black_24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/space10"
+                    android:tint="@android:color/holo_green_dark"/>
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</LinearLayout>

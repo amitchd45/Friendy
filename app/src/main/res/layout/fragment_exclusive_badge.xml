@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.solutions.friendy.BottomSheet.ExclusiveBadgeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/space20"
+            android:padding="@dimen/space4"
+            android:layout_marginBottom="@dimen/space10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exclusive Badge"
+                style="@style/headingText"
+                android:textSize="@dimen/text20"
+                android:layout_gravity="center_horizontal"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/space7"
+                    android:elevation="@dimen/space1"
+                    android:layout_marginRight="@dimen/space5"
+                    android:layout_marginLeft="@dimen/space5"
+                    android:layout_marginBottom="@dimen/space15"
+                    android:layout_marginTop="@dimen/space20">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="@dimen/space150"
+                            android:paddingHorizontal="@dimen/space5"
+                            android:layout_height="@dimen/space140"
+                            app:riv_corner_radius="7dp"
+                            android:paddingTop="@dimen/space5"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/girl_1" />
+
+                        <LinearLayout
+                            android:padding="@dimen/space10"
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/space5"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Name"
+                                android:textColor="@color/appColor"/>
+
+                            <TextView
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/space5"
+                                android:paddingLeft="@dimen/space10"
+                                android:paddingRight="@dimen/space10"
+                                android:paddingTop="@dimen/space2"
+                                android:paddingBottom="@dimen/space2"
+                                android:background="@drawable/ractangle_bg"
+                                android:layout_centerVertical="true"
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/textHeading"
+                                android:text="VIP"
+                                android:textColor="@android:color/white" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wanna get matches easily? Stand out from the\ncrowd with a red nickname and exclusive badge!"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/optional"
+                style="@style/headingText"
+                android:textSize="@dimen/text16"
+                android:layout_gravity="center_horizontal"/>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.Swipe_1Fragment">
+
+    <LinearLayout
+        android:padding="@dimen/space5"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:paddingTop="@dimen/space20"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/headingText"
+                android:textSize="@dimen/text18"
+                android:textColor="@android:color/black"
+                android:text="Swipe " />
+
+            <TextView
+                android:textSize="@dimen/text18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/headingText"
+                android:textColor="@color/colorAccent"
+                android:text="right " />
+
+            <TextView
+                android:textSize="@dimen/text18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/headingText"
+                android:textColor="@android:color/black"
+                android:text="to like" />
+            <TextView
+                android:textSize="@dimen/text18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/headingText"
+                android:textColor="@android:color/black"
+                android:text=" and " />
+
+            <TextView
+                android:textSize="@dimen/text18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/headingText"
+                android:textColor="@color/blue"
+                android:text="left " />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="@dimen/text18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/headingText"
+                android:textColor="@android:color/black"
+                android:text="to pass" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="@dimen/space150"
+        android:layout_height="@dimen/space150"
+        android:src="@drawable/girl_1"
+        app:riv_corner_radius="@dimen/space8"
+        android:layout_marginTop="@dimen/space20"
+        android:layout_marginBottom="@dimen/space10"/>
+
+
+</LinearLayout>

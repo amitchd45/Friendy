@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.solutions.friendy.Fragments.HelpFragment">
+
+    <include layout="@layout/topbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:padding="@dimen/space20"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Complaint"
+                style="@style/textHeading"
+                android:textColor="@color/theme" />
+
+            <EditText
+                android:id="@+id/et_detail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space50"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:singleLine="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/stroke_theme"
+                android:hint="Please Enter Query" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_marginTop="@dimen/space15"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space50"
+                android:hint="email"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/stroke_theme"
+                android:padding="@dimen/space10"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/stroke_theme"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="30dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_check"
+                    android:visibility="gone"
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_checkmark"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_images"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Images (Optional)"
+                            style="@style/textHeading"
+                            android:textColor="@color/theme" />
+
+
+                        <TextView
+                            android:layout_below="@id/tv_images"
+                            android:layout_marginTop="25dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Contact info (Optional)"
+                            style="@style/textHeading"
+                            android:textColor="@color/theme" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_upload_help_pic"
+                        android:src="@drawable/ic_camera_alt_black_24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:tint="@color/theme"
+                        android:padding="5dp"
+                        android:background="@drawable/stroke_theme"
+                        android:layout_width="@dimen/space70"
+                        android:layout_height="@dimen/space70" />
+
+
+                </RelativeLayout>
+
+
+                <EditText
+                    android:id="@+id/et_info"
+                    android:padding="@dimen/space10"
+                    android:layout_below="@id/tv_images"
+                    android:layout_marginTop="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space50"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:hint="N/A"
+                    android:background="@drawable/stroke_theme"
+                    style="@style/textSmall" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Send"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/button_bg"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

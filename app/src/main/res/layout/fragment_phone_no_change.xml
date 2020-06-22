@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.solutions.friendy.Fragments.PhoneNoChangeFragment">
+
+    <include layout="@layout/topbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardview"
+                android:layout_below="@id/toplogo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space50"
+                app:cardCornerRadius="@dimen/space2"
+                android:layout_margin="@dimen/space15">
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space6"
+                    android:paddingRight="@dimen/space10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginRight="@dimen/space10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cell_phone" />
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp"
+                        app:ccp_textSize="@dimen/space12"
+                        android:background="@drawable/rectangle_text"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:ccp_showFlag="false"
+                        app:ccp_contentColor="@android:color/darker_gray"
+                        app:ccp_autoDetectCountry="true"
+                        app:ccp_autoFormatNumber="true"
+                        app:ccp_showNameCode="false" />
+
+                    <EditText
+                        android:focusableInTouchMode="true"
+                        android:maxLength="11"
+                        android:id="@+id/et_phone"
+                        style="@style/normalText"
+                        android:inputType="phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/space1"
+                        android:background="@android:color/transparent"
+                        android:hint="Phone Number"
+                        android:paddingLeft="@dimen/space6"
+                        android:textSize="@dimen/text14"
+                        android:paddingRight="@dimen/space10"
+                        android:drawablePadding="@dimen/space10" />
+
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="40dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verification Code"
+                    android:layout_centerHorizontal="true"
+                    android:paddingVertical="10dp"
+                    style="@style/textSmall"
+                    android:textColor="@color/darkgrey"/>
+
+
+            </RelativeLayout>
+
+            <in.aabhasjindal.otptextview.OtpTextView
+                android:layout_marginTop="@dimen/space10"
+                android:layout_gravity="center"
+                android:id="@+id/otp_view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/space45"
+                android:textColor="@android:color/black"
+                app:otp_box_background_active="@drawable/otp_box"
+                app:otp_box_background_error="@drawable/otp_box_error"
+                app:otp_box_background_success="@drawable/otp_box_success"
+                app:otp_box_background_inactive="@drawable/otp_box_inactive"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                app:bar_enabled="false"
+                app:bar_height="2dp"
+                app:height="40dp"
+                app:length="4"
+                app:otp_text_size="@dimen/sp_15"
+                app:width="40dp" />
+
+
+
+            <Button
+                android:id="@+id/btn_getOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Code"
+                android:background="@drawable/button_bg"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:paddingVertical="7dp"
+                android:paddingHorizontal="20dp"/>
+
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/btn_phone_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:background="@drawable/button_bg"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space10"
+                android:paddingVertical="7dp"
+                android:paddingHorizontal="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:layout_height="wrap_content"
+                android:text="Input your phone number and get a verification code, we will help you reset your password."
+                android:layout_centerHorizontal="true"
+                android:paddingVertical="10dp"
+                style="@style/textSmall"
+                android:textColor="@color/darkgrey"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

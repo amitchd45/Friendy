@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.solutions.friendy.Fragments.LikeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_above="@id/btn_850_get_inst"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:paddingTop="@dimen/space5"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="@dimen/space190"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space5"
+                app:cardCornerRadius="@dimen/space8">
+
+                <LinearLayout
+                    android:padding="@dimen/space5"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="@dimen/space5"
+                        android:padding="@dimen/space5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All Matches"
+                        android:textSize="@dimen/text16"/>
+
+                    <RelativeLayout
+                        android:layout_margin="@dimen/space12"
+                        android:background="@drawable/ractangle_gray_bg"
+                        android:padding="@dimen/space12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/iv_all_match"
+                            android:layout_width="@dimen/space40"
+                            android:layout_height="@dimen/space40"
+                            app:civ_border_width="@dimen/space2"
+                            app:civ_border_color="@color/appColor"
+                            android:src="@drawable/girl_2"/>
+
+                        <ImageView
+                            android:tint="@color/appColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_heart_1"
+                            android:layout_alignBottom="@id/iv_all_match"
+
+                            android:layout_marginLeft="-12dp"
+                            android:layout_marginTop="@dimen/space20"
+                            android:layout_toRightOf="@id/iv_all_match"
+                            />
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/space6"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/iv_all_match"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Who Liked Me?"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text12"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="220dp"
+                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="@color/theme"
+                android:layout_gravity="center"
+                android:layout_marginTop="-10dp"
+                android:layout_height="250dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Likes"
+                        android:textSize="@dimen/text16"
+                        style="@style/textHeading"
+                        android:layout_gravity="center"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="@dimen/space5"
+                        android:layout_marginRight="@dimen/space5"
+                        android:weightSum="2"
+                        android:layout_height="wrap_content">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="80dp"
+                            app:riv_corner_radius="8dp"
+                            android:src="@drawable/girl_1"/>
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="80dp"
+                            app:riv_corner_radius="8dp"
+                            android:src="@drawable/girl_2"/>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginRight="@dimen/space5"
+                        android:layout_marginLeft="@dimen/space5"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_height="wrap_content">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="80dp"
+                            app:riv_corner_radius="8dp"
+                            android:src="@drawable/girl_2"/>
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="80dp"
+                            app:riv_corner_radius="8dp"
+                            android:src="@drawable/girl_2"/>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:text="Find out who likes you!"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_850_get_inst"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$ 850 Get Instant Access Now!"
+        android:textAllCaps="false"
+        android:background="@drawable/button_bg_1"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginRight="@dimen/space20"
+        android:layout_marginBottom="@dimen/space10"/>
+
+</RelativeLayout>

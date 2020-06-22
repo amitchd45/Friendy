@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.MyPrivilegesFragment">
+
+    <include layout="@layout/topbar" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerImageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space180"
+        android:paddingTop="@dimen/space10"
+        android:paddingRight="@dimen/space20"
+        android:paddingLeft="@dimen/space20"
+        android:layout_marginBottom="@dimen/space5"
+        />
+
+    <FrameLayout
+        android:paddingTop="@dimen/space2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frameLayout"
+        android:layout_below="@id/viewPagerImageSlider" />
+
+
+</LinearLayout>

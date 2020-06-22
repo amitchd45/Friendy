@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.UploadMomentsActivity">
+
+    <include layout="@layout/topbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/tv_titleName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
+                android:padding="@dimen/space15"
+                android:layout_margin="@dimen/space5"/>
+
+            <EditText
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:padding="@dimen/space15"
+                android:layout_margin="@dimen/space5"/>
+
+            <EditText
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Location"
+                android:padding="@dimen/space15"
+                android:layout_margin="@dimen/space5"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_uploadImage"
+                android:layout_marginTop="@dimen/space10"
+                android:layout_gravity="center"
+                app:riv_corner_radius="@dimen/space8"
+                android:layout_width="@dimen/space150"
+                android:layout_height="@dimen/space150"
+                android:scaleType="centerCrop"
+                android:src="@drawable/add"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/space10"
+            android:background="@drawable/button_bg"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

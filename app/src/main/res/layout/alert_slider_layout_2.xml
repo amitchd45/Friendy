@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog">
+
+
+
+    <LinearLayout
+        android:paddingBottom="@dimen/space20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dialog2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/iv_close"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/space5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_cancel"/>
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text18"
+                android:text="See Who Liked Me"/>
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:padding="@dimen/space10"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/space110"
+            android:layout_height="@dimen/space110"
+            android:src="@drawable/girl_1"
+            app:civ_border_width="@dimen/space2"
+            app:civ_border_color="@color/white"/>
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="she's 22 year old, 3km away and she's\ninto you.Match with her now!"
+            android:gravity="center_horizontal"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/alert_subscription_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:id="@+id/alert_subscription_banner1"
+            android:paddingBottom="2dp"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_offer_alert1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/bg_button"
+                android:visibility="invisible"
+                android:gravity="center"
+                android:text="30% off"/>
+
+            <LinearLayout
+                android:id="@+id/period_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/tv_offer_alert1"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_period_alert1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:text="12"/>
+
+                <TextView
+                    android:id="@+id/tv_period_alert1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/colorBlack"
+                    android:text="month"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_price_alert1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/period_layout1"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:text="200/month"/>
+
+            <TextView
+                android:id="@+id/tv_fullPrice_alert1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_price_alert1"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="₹2400"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/alert_subscription_banner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_banner"
+            android:paddingBottom="2dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_offer_alert2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/bg_button"
+                android:gravity="center"
+                android:text="24% off"/>
+
+            <LinearLayout
+                android:id="@+id/period_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/tv_offer_alert2"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_period_alert2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/appColor"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:text="3"/>
+
+                <TextView
+                    android:id="@+id/tv_period_alert2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/appColor"
+                    android:text="month"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_price_alert2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/period_layout2"
+                android:textColor="@color/appColor"
+                android:gravity="center"
+                android:text="300/month"/>
+
+            <TextView
+                android:id="@+id/tv_fullPrice_alert2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_price_alert2"
+                android:textColor="@color/appColor"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="₹900"/>
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/alert_subscription_banner3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_offer_alert3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:text="10% off"/>
+
+            <LinearLayout
+                android:id="@+id/period_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/tv_offer_alert3"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_period_alert3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="bottom"
+
+                    android:text="1"/>
+                <TextView
+
+                    android:id="@+id/tv_period_alert3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"
+                    android:text="month"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_price_alert3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/period_layout3"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:text="500/month"/>
+
+            <TextView
+                android:id="@+id/tv_fullPrice_alert3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_price_alert3"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="₹500"/>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_choosePlan"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space150"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_plan"/>
+
+    <Button
+        android:id="@+id/btn_getInstance_access"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="@dimen/space10"
+        android:layout_marginRight="@dimen/space20"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginTop="@dimen/space10"
+        android:textAllCaps="false"
+        android:text="Get Instant Access Now"/>
+
+</LinearLayout>

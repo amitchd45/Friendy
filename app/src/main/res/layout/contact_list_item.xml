@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:paddingRight="@dimen/space25"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="@dimen/space10"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/contact_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:buttonTint="@color/appColor"/>
+<!--            android:button="@drawable/custom_checkbox"/>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="@dimen/space10"
+            android:textStyle="bold"
+            android:textSize="@dimen/text13"
+            android:id="@+id/contact"
+            android:text="Name"
+            android:clickable="true">
+        </TextView>
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/space5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space1"
+        android:layout_marginRight="@dimen/space20"
+        android:background="@color/lightGray"/>
+
+</LinearLayout>
+

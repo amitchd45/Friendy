@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imageSlider"
+        android:layout_marginBottom="@dimen/space10"
+        android:adjustViewBounds="true"
+        app:riv_corner_radius="@dimen/space10"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:layout_height="@dimen/space200">
+
+    </com.makeramen.roundedimageview.RoundedImageView>
+    <LinearLayout
+        android:visibility="visible"
+        android:layout_margin="@dimen/space15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_vip_name"
+            android:layout_marginTop="@dimen/space10"
+            android:layout_alignLeft="@id/imageSlider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text14"
+            android:text="VIP"/>
+        <TextView
+            android:id="@+id/tv_subName"
+            android:layout_alignLeft="@id/imageSlider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text12"
+            android:text="VIP Privileges"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginBottom="@dimen/space5"
+        android:layout_above="@id/bottom_part"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space2"
+        android:background="@drawable/dotes_line_hor"/>
+
+    <RelativeLayout
+        android:id="@+id/bottom_part"
+        android:layout_marginTop="@dimen/space2"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginBottom="@dimen/space14"
+        android:layout_alignBottom="@id/imageSlider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_user"
+            android:layout_width="@dimen/space30"
+            android:layout_height="@dimen/space30"
+            android:src="@drawable/girl_3"
+            app:civ_border_color="@color/appColor"
+            app:civ_border_width="@dimen/space2"
+            />
+
+        <TextView
+            android:layout_marginLeft="@dimen/text10"
+            android:textSize="@dimen/text12"
+            android:id="@+id/tv_verification_text"
+            android:layout_toRightOf="@id/iv_user"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VIP not yet activated"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

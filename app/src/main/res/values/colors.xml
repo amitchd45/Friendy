@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fc5068</color>
+    <color name="colorPrimaryDark">#fc5068</color>
+    <color name="colorAccent">#fc5068</color>
+    <color name="blue">#3c62b1</color>
+    <color name="appColor">#fc5068</color>
+    <color name="lightBlack">#B2000000</color>
+
+    <color name="theme">#fc5068</color>
+    <color name="grey">#A9A9A9</color>
+    <color name="darkgrey">#615959</color>
+    <color name="lightgrey">#e4e4e4</color>
+    <color name="colorBlack">#000</color>
+    <color name="lightGray">#70CCCCCC</color>
+
+    <color name="greycolor">#C9C9C9</color>
+    <color name="colorWhite">#fff</color>
+</resources>

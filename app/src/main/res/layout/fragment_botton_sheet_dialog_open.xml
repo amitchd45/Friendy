@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="BaseBottomSheetDialog"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.BottonSheetDialogOpenFragment">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:padding="@dimen/space10"
+        android:src="@drawable/ic_cancel"
+        android:tint="@color/appColor" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space400"
+        android:layout_marginBottom="@dimen/space20" />
+
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/SliderDots1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/space15"
+        app:ci_drawable="@color/appColor"
+        app:ci_drawable_unselected="@android:color/darker_gray" />
+
+
+    <Button
+        android:id="@+id/btn_get_VIP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_marginRight="@dimen/space20"
+        android:layout_marginBottom="@dimen/space20"
+        android:background="@drawable/button_bg_1"
+        android:text="$ 139 Get VIP"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

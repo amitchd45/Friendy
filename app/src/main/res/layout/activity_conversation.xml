@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.ConversationActivity">
+
+    <include layout="@layout/topbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_moments"
+            android:layout_marginRight="@dimen/space10"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space10"
+            android:layout_marginTop="@dimen/space20"
+            android:layout_marginBottom="@dimen/space20"
+            android:elevation="@dimen/space3"
+            android:background="@drawable/edit_bg_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:paddingLeft="@dimen/space15"
+                android:id="@+id/dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_circular_shape_silhouette" />
+
+            <EditText
+                android:id="@+id/et_moments"
+                android:editable="false"
+                android:layout_toRightOf="@id/dot"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space45"
+                android:layout_marginStart="@dimen/space2"
+                android:layout_marginLeft="@dimen/space2"
+                android:layout_marginEnd="@dimen/space2"
+                android:background="@android:color/transparent"
+                android:textSize="@dimen/text14"
+                android:hint="Moments"
+                android:paddingLeft="@dimen/space10"
+                android:paddingRight="@dimen/space5"
+                android:singleLine="true" />
+
+            <ImageView
+                android:tint="@color/appColor"
+                android:paddingRight="@dimen/space15"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_right_arrow" />
+
+        </RelativeLayout>
+
+<!--        app:tabIndicatorHeight="0dp"-->
+<!--        app:tabSelectedTextColor="@android:color/white"-->
+<!--        app:tabTextColor="@android:color/darker_gray"-->
+<!--        app:tabMode="fixed"-->
+<!--        app:tabTextAppearance="@style/MineCustomTabText"-->
+<!--        app:tabBackground="@drawable/selected_tab"-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tabLayout" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewPager" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.PrivacyNotificationFragment">
+
+    <include layout="@layout/topbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contacts"
+                android:textColor="@color/black"
+                android:background="@color/lightgrey"
+                android:paddingVertical="15dp"
+                android:layout_centerVertical="true"
+                style="@style/textHeading"
+                />
+
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    style="@style/textHeading"
+                    android:layout_height="wrap_content"
+                    android:text="Blocked Phone Contacts"
+                    android:textColor="@color/theme" />
+
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_pushNotification"
+                    app:sb_uncheckcircle_color="@color/theme"
+                    app:sb_uncheck_color="@color/theme"
+                    app:sb_checked_color="@color/theme"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    app:sb_show_indicator="false"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textHeading"
+                    android:text="Mutual Contacts"
+                    android:textColor="@color/theme" />
+
+
+                <com.suke.widget.SwitchButton
+                    app:sb_uncheckcircle_color="@color/theme"
+                    app:sb_uncheck_color="@color/theme"
+                    app:sb_checked_color="@color/theme"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    app:sb_show_indicator="false"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="13dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications"
+                    style="@style/textHeading" />
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    style="@style/textHeading"
+                    android:layout_height="wrap_content"
+                    android:text="Show Message Previews"
+                    android:textColor="@color/theme" />
+
+
+                <com.suke.widget.SwitchButton
+                    app:sb_uncheckcircle_color="@color/theme"
+                    app:sb_uncheck_color="@color/theme"
+                    app:sb_checked_color="@color/theme"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    app:sb_show_indicator="false"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textHeading"
+                    android:text="Show Moments Like in Chat"
+                    android:textColor="@color/theme" />
+
+
+                <com.suke.widget.SwitchButton
+                    app:sb_uncheckcircle_color="@color/theme"
+                    app:sb_uncheck_color="@color/theme"
+                    app:sb_checked_color="@color/theme"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    app:sb_show_indicator="false"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textHeading"
+                    android:text="Vibration"
+                    android:textColor="@color/theme" />
+
+
+                <com.suke.widget.SwitchButton
+                    app:sb_uncheckcircle_color="@color/theme"
+                    app:sb_uncheck_color="@color/theme"
+                    app:sb_checked_color="@color/theme"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    app:sb_show_indicator="false"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@color/lightgrey"-->
+<!--                android:paddingHorizontal="10dp"-->
+<!--                android:paddingVertical="13dp">-->
+
+<!--                <TextView-->
+<!--                    style="@style/textHeading"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:text="My Album" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:paddingHorizontal="10dp"-->
+<!--                android:paddingVertical="10dp"-->
+<!--                android:background="@color/lightgrey"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Visible only to my matches"-->
+<!--                    style="@style/textHeading"-->
+<!--                    android:textColor="@color/theme" />-->
+
+
+<!--                <com.suke.widget.SwitchButton-->
+<!--                    app:sb_uncheckcircle_color="@color/theme"-->
+<!--                    app:sb_uncheck_color="@color/theme"-->
+<!--                    app:sb_checked_color="@color/theme"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    app:sb_show_indicator="false"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </RelativeLayout>-->
+
+
+<!--            <RelativeLayout-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:paddingHorizontal="10dp"-->
+<!--                android:paddingVertical="13dp"-->
+<!--                android:background="@color/lightgrey"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Moments"-->
+<!--                    android:textColor="@color/theme"-->
+<!--                    style="@style/textHeading" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/rl_mute_user"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:paddingHorizontal="10dp"-->
+<!--                android:paddingVertical="10dp"-->
+<!--                android:background="@color/lightgrey"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Musted Users"-->
+<!--                    style="@style/textHeading"-->
+<!--                    android:textColor="@color/theme" />-->
+
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/ic_right_arrow"-->
+<!--                    android:tint="@color/theme"-->
+<!--                    android:layout_alignParentRight="true"/>-->
+
+<!--            </RelativeLayout>-->
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

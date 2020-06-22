@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+<!--    android:background="@drawable/bg_banner"-->
+
+    <RelativeLayout
+        android:id="@+id/alert_subscription_banner1"
+        android:paddingBottom="2dp"
+        android:layout_margin="5dp"
+
+        android:layout_width="@dimen/space120"
+        android:layout_height="@dimen/space140">
+        <TextView
+            android:id="@+id/tv_offer_alert1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/bg_button"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="30% off"/>
+
+        <LinearLayout
+            android:id="@+id/period_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/tv_offer_alert1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_period_alert1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textColor="@color/colorBlack"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="12"/>
+
+            <TextView
+                android:id="@+id/tv_period_alert1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textColor="@color/colorBlack"
+                android:text="month"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_price_alert1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/period_layout1"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:text="200/month"/>
+
+        <TextView
+            android:id="@+id/tv_fullPrice_alert1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_price_alert1"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="₹2400"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

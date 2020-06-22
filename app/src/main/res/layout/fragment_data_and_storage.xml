@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.DataAndStorageFragment">
+
+    <include layout="@layout/topbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data"
+                android:background="@color/lightgrey"
+                android:paddingVertical="15dp"
+                android:layout_centerVertical="true"
+                style="@style/textHeading" />
+
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    style="@style/textHeading"
+                    android:layout_height="wrap_content"
+                    android:text="Autoplay Videos on Wi-fi"
+                    android:textColor="@color/theme" />
+
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_pushNotification"
+                    app:sb_uncheckcircle_color="@color/theme"
+                    app:sb_uncheck_color="@color/theme"
+                    app:sb_checked_color="@color/theme"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    app:sb_show_indicator="false"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="13dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cache"
+                    style="@style/textHeading" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background_color"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:tint="@android:color/white"
+                    android:src="@drawable/ic_down_arrow" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Cache"
+                    style="@style/textHeading"
+                    android:textColor="@color/theme" />
+
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="105MB"
+                    style="@style/textSmall" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/lightgrey"
+                android:paddingVertical="15dp"
+                android:text="Clear Local Data"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/theme"
+                style="@style/textHeading" />
+
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/darkgrey"
+                android:layout_height="wrap_content"
+                android:text="Clear Local Data will only remove local files stored locally to free the storage space. All content will be download again from our server when needed."
+                style="@style/textSmall" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.BottomSheet.UnlimitedRewindsFragment">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/space10"
+            android:padding="@dimen/space4"
+            android:layout_marginBottom="@dimen/space10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unlimited Rewinds"
+                style="@style/headingText"
+                android:textSize="@dimen/text20"
+                android:layout_gravity="center_horizontal"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/space7"
+                    android:elevation="@dimen/space1"
+                    android:layout_marginRight="@dimen/space5"
+                    android:layout_marginLeft="@dimen/space5"
+                    android:layout_marginBottom="@dimen/space15"
+                    android:layout_marginTop="@dimen/space20">
+
+                    <ImageView
+                        android:tint="@color/appColor"
+                        android:elevation="@dimen/space2"
+                        android:src="@drawable/ic_refresh"
+                        android:layout_margin="@dimen/space10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="@dimen/space150"
+                            android:paddingHorizontal="@dimen/space5"
+                            android:layout_height="@dimen/space140"
+                            app:riv_corner_radius="7dp"
+                            android:paddingTop="@dimen/space5"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/girl_3" />
+
+                        <LinearLayout
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/space5"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+
+
+                            <View
+                                android:layout_marginLeft="@dimen/space5"
+                                android:background="@drawable/circle_background_grey"
+                                android:layout_width="@dimen/space15"
+                                android:layout_height="@dimen/space15" />
+
+                            <View
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/circle_background_grey"
+                                android:layout_width="@dimen/space15"
+                                android:layout_height="@dimen/space15" />
+
+                            <ImageView
+                                android:tint="@color/appColor"
+                                android:elevation="@dimen/space2"
+                                android:src="@drawable/ic_refresh"
+                                android:layout_margin="@dimen/space4"
+                                android:background="@drawable/circle_background"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true" />
+
+
+                            <View
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/circle_background_grey"
+                                android:layout_width="@dimen/space15"
+                                android:layout_height="@dimen/space15" />
+
+                            <View
+                                android:layout_marginRight="@dimen/space5"
+                                android:layout_marginLeft="@dimen/space5"
+                                android:background="@drawable/circle_background_grey"
+                                android:layout_width="@dimen/space15"
+                                android:layout_height="@dimen/space15" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:textSize="@dimen/text13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rewind_note"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

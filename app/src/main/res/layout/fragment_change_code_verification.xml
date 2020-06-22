@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.ChangeCodeVerificationFragment">
+
+    <include layout="@layout/topbar"/>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="50dp"
+                style="@style/textHeading"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Enter your password"
+                />
+
+
+
+            <LinearLayout
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:background="@color/lightgrey"
+                android:layout_width="match_parent"
+                android:paddingVertical="10dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="30dp"
+                    android:singleLine="true"
+                    android:maxLength="1"
+                    android:layout_height="30dp"
+                    android:background="@drawable/circle_background_color"/>
+
+                <EditText
+                    android:layout_width="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:singleLine="true"
+                    android:maxLength="1"
+                    android:layout_height="30dp"
+                    android:background="@drawable/circle_background_color"/>
+
+
+                <EditText
+                    android:layout_width="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:singleLine="true"
+                    android:maxLength="1"
+                    android:layout_height="30dp"
+                    android:background="@drawable/circle_background_color"/>
+
+
+                <EditText
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:singleLine="true"
+                    android:maxLength="1"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/circle_background_color"/>
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="50dp"
+                style="@style/textHeading"
+                android:layout_marginHorizontal="30dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Please type in your password to change your phone number." />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/button_bg"
+                android:text="Next"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</LinearLayout>

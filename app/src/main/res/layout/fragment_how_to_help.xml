@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.HowToHelpFragment">
+
+    <include layout="@layout/topbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How can i get more likes?"
+                android:textSize="@dimen/space20"
+                android:textColor="@color/appColor"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/space10"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note"
+                android:textSize="@dimen/text13"
+                android:textColor="@color/lightBlack"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/space15"/>
+
+
+            <Button
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Git it"
+                style="@style/buttonStyle"
+                android:layout_margin="@dimen/space20"/>
+
+            <Button
+                android:visibility="invisible"
+                android:layout_marginBottom="@dimen/space20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Still have other question"
+                style="@style/buttonStyle"
+                android:layout_marginLeft="@dimen/space20"
+                android:layout_marginRight="@dimen/space20"/>
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:padding="@dimen/space5"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_realPhoto"
+        android:layout_width="@dimen/space80"
+        android:layout_height="@dimen/space80"
+        android:src="@drawable/ic_launcher_background"
+        app:riv_corner_radius="@dimen/space12"/>
+
+    <ImageView
+        android:id="@+id/iv_check"
+        android:layout_alignRight="@id/iv_realPhoto"
+        android:layout_alignBottom="@id/iv_realPhoto"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/space8"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg"
+        android:src="@drawable/ic_check_circle_black_24dp"/>
+
+
+</RelativeLayout>

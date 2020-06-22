@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.StepUpFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_above="@id/btn_step_up_now"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/space20"
+                android:layout_marginLeft="@dimen/space20"
+                android:layout_marginRight="@dimen/space20"
+                android:background="@color/lightgrey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/space7"
+                    android:elevation="@dimen/space1"
+                    android:layout_marginRight="@dimen/space5"
+                    android:layout_marginLeft="@dimen/space5"
+                    android:layout_marginBottom="@dimen/space15"
+                    android:layout_marginTop="@dimen/space20">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:paddingHorizontal="@dimen/space5"
+                            android:layout_height="@dimen/space140"
+                            app:riv_corner_radius="7dp"
+                            android:paddingTop="@dimen/space5"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/girl_1" />
+
+                        <LinearLayout
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/space5"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+
+
+                            <View
+                                android:layout_marginLeft="@dimen/space5"
+                                android:background="@drawable/circle_background_grey"
+                                android:layout_width="@dimen/space15"
+                                android:layout_height="@dimen/space15" />
+
+                            <View
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/circle_background_grey"
+                                android:layout_width="@dimen/space15"
+                                android:layout_height="@dimen/space15" />
+
+                            <ImageView
+                                android:tint="@color/appColor"
+                                android:elevation="@dimen/space2"
+                                android:src="@drawable/ic_flash1"
+                                android:layout_margin="@dimen/space4"
+                                android:background="@drawable/circle_background"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true" />
+
+
+                            <View
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/circle_background_grey"
+                                android:layout_width="@dimen/space15"
+                                android:layout_height="@dimen/space15" />
+
+                            <View
+                                android:layout_marginRight="@dimen/space5"
+                                android:layout_marginLeft="@dimen/space5"
+                                android:background="@drawable/circle_background_grey"
+                                android:layout_width="@dimen/space15"
+                                android:layout_height="@dimen/space15" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/theme"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Allow 10x more people \nGet viewed by 10x more people" />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_step_up_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$ 52 Step Up Now"
+        android:textAllCaps="false"
+        android:background="@drawable/button_bg_1"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginRight="@dimen/space20"
+        android:layout_marginBottom="@dimen/space10"/>
+
+
+</RelativeLayout>

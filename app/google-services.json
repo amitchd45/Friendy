@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "809207416095",
+    "firebase_url": "https://friendy-d84f8.firebaseio.com",
+    "project_id": "friendy-d84f8",
+    "storage_bucket": "friendy-d84f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809207416095:android:f35099290a60a8236cdc2a",
+        "android_client_info": {
+          "package_name": "com.solutions.friendy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809207416095-d53mehlcg3q5mp5p6ui9orojglprukvl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.solutions.friendy",
+            "certificate_hash": "8c088d0244370cc551abf19446bc5081120a97a4"
+          }
+        },
+        {
+          "client_id": "809207416095-7bjuhecd4v4qjaipj4hopugbkl65ja8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6XpPVJYaqDNeZikUXlSCp8O63KeHaDvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809207416095-7bjuhecd4v4qjaipj4hopugbkl65ja8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

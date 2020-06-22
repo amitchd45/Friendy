@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.VipFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_above="@id/btn_get_VIP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/space10"
+                android:paddingRight="@dimen/space10"
+                android:paddingTop="@dimen/space5"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl_exclusive_vip"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="8dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_right_arrow"
+                        android:tint="@color/theme"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="@dimen/space3"
+                            android:elevation="@dimen/space2"
+                            android:background="@drawable/circle_bg"
+                            android:padding="@dimen/space10"
+                            android:tint="@color/theme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_crown" />
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/textHeading"
+                            android:text="Exclusive Badge"
+                            android:textColor="@color/theme" />
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/space5"
+                            android:paddingLeft="@dimen/space10"
+                            android:paddingRight="@dimen/space10"
+                            android:background="@drawable/ractangle_bg"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/textHeading"
+                            android:text="VIP"
+                            android:textColor="@android:color/white" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_unlimited_like"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="8dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_right_arrow"
+                        android:tint="@color/theme"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="@dimen/space3"
+                            android:elevation="@dimen/space2"
+                            android:background="@drawable/circle_bg"
+                            android:padding="@dimen/space10"
+                            android:tint="@color/theme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_unlimited_like" />
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/textHeading"
+                            android:text="Unlimited Likes"
+                            android:textColor="@color/theme" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_superlike"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="@dimen/space10"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_right_arrow"
+                        android:tint="@color/theme"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="@dimen/space3"
+                            android:elevation="@dimen/space2"
+                            android:background="@drawable/circle_bg"
+                            android:padding="@dimen/space10"
+                            android:tint="@color/theme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_star_black_24dp" />
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/textHeading"
+                            android:text="5 Free Super Likes A Day"
+                            android:textColor="@color/theme" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_unlimited_rewaind"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="@dimen/space10"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_right_arrow"
+                        android:tint="@color/theme"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="@dimen/space3"
+                            android:elevation="@dimen/space2"
+                            android:background="@drawable/circle_bg"
+                            android:padding="@dimen/space10"
+                            android:tint="@color/theme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_refresh" />
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/textHeading"
+                            android:text="Unlimited Rewinds"
+                            android:textColor="@color/theme" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_glob"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="@dimen/space10"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_right_arrow"
+                        android:tint="@color/theme"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="@dimen/space3"
+                            android:elevation="@dimen/space2"
+                            android:background="@drawable/circle_bg"
+                            android:padding="@dimen/space10"
+                            android:tint="@color/theme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_send" />
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/textHeading"
+                            android:text="Swipe Around The Globe"
+                            android:textColor="@color/theme" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_get_VIP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$ 139 Get VIP"
+        android:textAllCaps="false"
+        android:background="@drawable/button_bg_1"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="@dimen/space10"
+        android:layout_marginRight="@dimen/space20"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginTop="@dimen/space10" />
+</RelativeLayout>

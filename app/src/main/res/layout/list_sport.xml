@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/cb_sport_name"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="name"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="@dimen/text16"-->
+<!--        android:layout_margin="@dimen/space10"/>-->
+
+    <RelativeLayout
+        android:id="@+id/rl_sport"
+        android:paddingTop="@dimen/space5"
+        android:paddingBottom="@dimen/space5"
+        android:layout_marginTop="@dimen/space20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:tint="@color/appColor"
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_image21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_sport"/>
+
+        <LinearLayout
+            android:layout_toRightOf="@id/iv_image21"
+            android:layout_marginLeft="@dimen/space20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:tint="@color/appColor"
+                android:id="@+id/iv_add_sport"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_black_16dp"/>
+
+            <TextView
+                android:layout_marginLeft="@dimen/space5"
+                android:id="@+id/tv_sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/text14"
+                android:text="What sport are you into?"
+                android:drawablePadding="@dimen/space8"
+                android:drawableTint="@color/appColor"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:id="@+id/rv_sublistInterest"/>
+
+</LinearLayout>

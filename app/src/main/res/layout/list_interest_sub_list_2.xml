@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_marginRight="@dimen/space10"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:layout_margin="@dimen/space5"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space40"
+        android:text="namegrtytyrtyrt"
+        android:paddingLeft="@dimen/space10"
+        android:paddingRight="@dimen/space10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text14"
+        android:textAllCaps="false"
+        android:background="@drawable/button_bg"
+        android:id="@+id/tv_sublist_interest"/>
+
+
+</LinearLayout>

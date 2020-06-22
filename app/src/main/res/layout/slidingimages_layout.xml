@@ -1,0 +1,47 @@
+<LinearLayout android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Tantan VIP"
+        android:layout_marginTop="20dp"
+        style="@style/textHeading"/>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_star_black_24dp"
+        android:tint="@android:color/white"
+        android:padding="15dp"
+        android:background="@drawable/circle_bg_blue"/>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5 Free Super Likes A Day"
+        android:layout_marginTop="20dp"
+        style="@style/textHeading"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkgrey"
+        android:text="You're 5x more likely to get a match!"
+        android:layout_marginTop="20dp"
+        style="@style/textSmall"/>
+
+
+</LinearLayout>
+

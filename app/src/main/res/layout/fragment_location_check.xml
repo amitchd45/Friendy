@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.LocationCheckFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.skyfishjy.library.RippleBackground
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space200"
+            android:id="@+id/content"
+            app:rb_color="@color/appColor"
+            app:rb_radius="@dimen/space20"
+            app:rb_rippleAmount="4"
+            app:rb_duration="3000"
+            app:rb_scale="5">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space5"
+                android:layout_centerInParent="true"
+                android:id="@+id/centerImage"
+                android:tint="@android:color/black"
+                android:src="@drawable/ic_pin"/>
+        </com.skyfishjy.library.RippleBackground>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/headingText"
+        android:text="@string/where"
+        android:textColor="@color/appColor"
+        android:textSize="@dimen/text16"
+        android:padding="@dimen/space10"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/normalText"
+        android:text="@string/location_note"
+        android:textColor="@color/lightBlack"
+        android:padding="@dimen/space10"
+        android:layout_gravity="center_horizontal"/>
+
+
+
+
+</LinearLayout>

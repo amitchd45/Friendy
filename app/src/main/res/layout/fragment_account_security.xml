@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.solutions.friendy.Fragments.AccountSecurityFragment">
+
+    <include layout="@layout/topbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account Details"
+                android:background="@color/lightgrey"
+                android:paddingVertical="15dp"
+                android:layout_centerVertical="true"
+                style="@style/textHeading" />
+
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textHeading"
+                    android:drawableLeft="@drawable/ic_smartphone_black_24dp"
+                    android:drawableTint="@color/theme"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:text="Phone Number"
+                    android:textColor="@color/theme" />
+
+
+                <Button
+                    android:id="@+id/btn_change_no"
+                    android:layout_width="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawableTint="@android:color/white"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_bg"
+                    android:text="+91 8054*******" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_update_password"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="13dp"
+                android:background="@color/lightgrey"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+                    android:drawableTint="@color/theme"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/theme"
+                    android:text="Set or Update Password"
+                    style="@style/textHeading" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:tint="@color/theme"
+                    android:src="@drawable/ic_right_arrow" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_deleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/lightgrey"
+                android:paddingVertical="15dp"
+                android:text="Delete Your Account"
+                android:drawableLeft="@drawable/ic_delete_black_24dp"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/theme"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/theme"
+                style="@style/textHeading" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_marginRight="@dimen/space5"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:padding="@dimen/space5"
+        android:layout_width="@dimen/space80"
+        android:layout_height="@dimen/space80"
+        android:src="@drawable/avatar"/>
+
+
+</LinearLayout>

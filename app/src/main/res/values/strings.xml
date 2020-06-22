@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Friendy</string>
+
+    <string name="google_maps_api_key">AIzaSyDFO1yNBgrQViiFr2CQ24t_9IV9AHBZNcU</string>
+
+    <string name="note">Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
+
+
+    <string name="facebook_app_id">232966207902110</string>
+    <string name="fb_login_protocol_scheme">fb232966207902110</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="continue_with_phone">Continue with phone number</string>
+    <string name="continue_with_fb">Continue with facebook</string>
+    <string name="where">Where are you?</string>
+    <string name="location_note">Allow Friendy to access your location,\nand get see interesting people nearby</string>
+    <string name="notification_note">Notification may include alert ,sounds and icon badges.The can be configuredin settings.</string>
+    <string name="dont_allow">Don\'t Allow</string>
+    <string name="allow">Allow</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="do_not_recieve_otp">Didn\'t receive the code?</string>
+    <string name="resend_code">Resend code</string>
+    <string name="nikename">Nickname</string>
+    <string name="user_hints">Nickname</string>
+    <string name="birthday">Birth Date</string>
+    <string name="birthdat">Birth day</string>
+    <string name="signup">Sign Up</string>
+    <string name="gender">Gender</string>
+    <string name="password">Password</string>
+    <string name="Add_Photo">Add a Photo</string>
+    <string name="password_hints">********</string>
+    <string name="Complain">Complaints of Premium Services</string>
+    <string name="verification">Verify Profile Photo</string>
+    <string name="verificationCode">Verification code</string>
+    <string name="do_not_otp">Didn\'t receive OTP?</string>
+    <string name="resend">Resend</string>
+    <string name="comming_soon">Coming soon...</string>
+    <string name="swipe_2_note">When you like someone\nand they like you,it\'s a</string>
+    <string name="match">match !</string>
+    <string name="congratulation">Congratulations!</string>
+    <string name="optional"><u>(Fully Optional)</u></string>
+    <string name="bottom_sheet_content">bottom_sheet</string>
+    <string name="like_note">Break the daily limit of right swipes to make more\nconnections!</string>
+    <string name="super_like_note">5 Super Like each day for the ones you find super\nattractive! It\'ll increase your match rate by over 5\ntimes!</string>
+    <string name="rewind_note">Unlimited Rewinds got your back every time you\nswipe a profile to the wrong direction</string>
+    <string name="glob_note">Change your location to anywhere around the\nworld. Make friend with people in India,\nLondon and Rio!</string>
+    <string name="about">About Me</string>
+    <string name="my_info">My Information</string>
+    <string name="my_personality">My Personality</string>
+    <string name="my_interests">My Interests</string>
+    <string name="dialog_title">Personality</string>
+    <string name="ok_label">ok</string>
+    <string name="dismiss_label">Cancel</string>
+    <string name="clear_all_label">All clear</string>
+    <string name="channel_description">channel_description</string>
+    <string name="type_message">typing message...</string>
+    <string name="take_photo">take photo</string>
+    <string name="message_sent_successfully">message send suss</string>
+    <string name="message_sending_failed">sending fail</string>
+    <string name="choose_from_library">Choose from gallery</string>
+</resources>

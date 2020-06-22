@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="@dimen/space10"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/contact_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:buttonTint="@color/appColor" />
+
+
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/space10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="@dimen/text13"
+                android:id="@+id/contact_name"
+                android:text="Name"
+                android:clickable="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="@dimen/text13"
+                android:id="@+id/number"
+                android:text="9876542188"
+                android:clickable="true" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--    <View-->
+    <!--        android:layout_marginTop="@dimen/space5"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="@dimen/space1"-->
+    <!--        android:layout_marginRight="@dimen/space20"-->
+    <!--        android:background="@color/lightGray"/>-->
+
+</LinearLayout>
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.solutions.friendy.Fragments.IncognitoFragment">
+
+    <LinearLayout
+        android:paddingTop="@dimen/space20"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stay incognito"
+            style="@style/headingText"
+            android:textSize="@dimen/text18"
+            android:textStyle="bold"
+            android:padding="@dimen/space10" />
+
+        <TextView
+            android:padding="@dimen/space8"
+            android:layout_marginTop="@dimen/space10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lightBlack"
+            android:text="Allow address book access to prevent\nyour contacts from finding you,\nand you from finding them."
+            style="@style/normalText" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/inti" />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hide yourself from contacts"
+                style="@style/normalText"/>
+
+            <com.suke.widget.SwitchButton
+                android:layout_marginLeft="@dimen/space10"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/switch_button"
+                app:sb_uncheckcircle_color="@color/appColor"
+                app:sb_uncheck_color="@color/appColor"
+                app:sb_checked_color="@color/appColor"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                app:sb_show_indicator="false"
+                android:layout_height="@dimen/space30"/>
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:layout_margin="@dimen/space25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Playing"
+            style="@style/buttonStyle"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.solutions.friendy.Fragments.Swipe_2Fragment">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/space10"
+        android:padding="@dimen/space10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/swipe_2_note"
+            android:textColor="@color/black"
+            style="@style/headingText" />
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/match"
+            android:textColor="@color/appColor"
+            style="@style/headingText" />
+
+        <TextView
+            android:layout_marginTop="@dimen/space10"
+            android:layout_marginBottom="@dimen/space10"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/congratulation"
+            android:textColor="@color/appColor"
+            android:textSize="25sp"
+            style="@style/headingText" />
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/space15"
+            android:layout_marginBottom="@dimen/space10"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image1"
+                android:layout_width="@dimen/space130"
+                android:layout_height="@dimen/space130"
+                android:src="@drawable/girl_1"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_toRightOf="@id/image1"
+                android:layout_width="@dimen/space130"
+                android:layout_height="@dimen/space130"
+                android:src="@drawable/girl_3"/>
+
+            <ImageView
+                android:layout_alignBottom="@id/image1"
+                android:padding="@dimen/space10"
+                android:layout_marginLeft="-34dp"
+                android:layout_toRightOf="@id/image1"
+                android:tint="@color/white"
+                android:layout_width="@dimen/space70"
+                android:layout_height="@dimen/space70"
+                android:src="@drawable/ic_favorite_black_24dp"
+                android:background="@drawable/app_color_circle"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

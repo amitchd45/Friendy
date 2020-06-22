@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="@dimen/space30"
+            android:layout_marginBottom="@dimen/text20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_approved"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_marginRight="@dimen/space30"
+            android:layout_marginLeft="@dimen/space30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sent!"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text18"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/text20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Friend will be notified, but won't know it is from you.We'll let you know as soon as you receive a crush!"
+                android:textSize="@dimen/text14"/>
+
+            <TextView
+                android:id="@+id/left"
+                android:layout_marginTop="@dimen/text20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You can come back anytime and send more crushes.You have 4 left."
+                android:textSize="@dimen/text14"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_gotIt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GOT IT!"
+            android:textColor="@color/online_green"
+            android:textStyle="bold"
+            android:padding="@dimen/space10"
+            android:layout_gravity="right"
+            android:layout_margin="@dimen/space20"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
