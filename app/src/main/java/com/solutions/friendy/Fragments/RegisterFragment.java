@@ -346,10 +346,9 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     }
 
     private void validate() {
-
-        nameStr = nameEt.getText().toString();
-        dobStr = dobEt.getText().toString();
-        passwordStr = passwordEt.getText().toString();
+        nameStr = nameEt.getText().toString().trim();
+        dobStr = dobEt.getText().toString().trim();
+        passwordStr = passwordEt.getText().toString().trim();
 
         if (nameStr.length() == 0 || dobStr.isEmpty() || dobStr.equalsIgnoreCase("") || passwordStr.isEmpty() || passwordStr.length() < 8) {
             if (nameStr.length() == 0) {
@@ -360,17 +359,17 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             }
             if (passwordStr.length() < 8 || passwordStr.isEmpty()) {
                 if (passwordStr.length() < 8) {
-                    passwordEt.setError("Atleast eight char required");
+                    passwordEt.setError("Password should be 8 character.");
                 } else if (passwordStr.isEmpty()) {
                     passwordEt.setError("Field required");
                 }
             }
         } else {
 
-            App.getSinlton().setName(nameStr);
-            App.getSinlton().setGender(genderStr);
-            App.getSinlton().setDob(dobStr);
-            App.getSinlton().setPassword(passwordStr);
+            App.getAppPreference().SaveString(AppConstants.RUSER_NAME,nameStr);
+            App.getAppPreference().SaveString(AppConstants.RGENDER,genderStr);
+            App.getAppPreference().SaveString(AppConstants.RDOB,dobStr);
+            App.getAppPreference().SaveString(AppConstants.RPASS,passwordStr);
 
             NavDirections navDirections = RegisterFragmentDirections.actionRegisterFragmentToUploadRealPhotoFragment();
             Navigation.findNavController(view).navigate(navDirections);

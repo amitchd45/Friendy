@@ -121,7 +121,6 @@ public class UploadRealPhotoFragment extends Fragment implements View.OnClickLis
         id = App.getAppPreference().GetString("id");
 
         findIds(view);
-        Context context;
         progressDialog = new ProgressDialog(getActivity());
         setUp();
 
@@ -217,17 +216,9 @@ public class UploadRealPhotoFragment extends Fragment implements View.OnClickLis
 //        RequestBody latitudeRequestBody = RequestBody.create(MediaType.parse("text/plain"), App.getAppPreference().GetString(AppConstants.LATITUDE));
 //        RequestBody longitudeRequestBody = RequestBody.create(MediaType.parse("text/plain"), App.getAppPreference().GetString(AppConstants.LONGITUDE));
 
-
-//        if (imageCheck) {
         storeImage = new File(imagePath);
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), storeImage);
         body = MultipartBody.Part.createFormData("image", storeImage.getName(), requestFile);
-
-//        }
-//        else {
-//            RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), "");
-//            body = MultipartBody.Part.createFormData("image", "", requestFile);
-//        }
 
 
         vmRegisterUser.registerResults(getActivity(), nameRequestBody, dobRequestBody, genderRequestBody, passwordRequestBody, idRequestBody, latitudeRequestBody, longitudeRequestBody, body).observe(UploadRealPhotoFragment.this, new Observer<LoginRegisterPojo>() {

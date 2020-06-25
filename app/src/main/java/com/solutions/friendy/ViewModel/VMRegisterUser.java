@@ -148,11 +148,9 @@ public class VMRegisterUser extends ViewModel {
 
     public LiveData<LoginRegisterPojo> registerResults(final Activity activity, RequestBody name, RequestBody dob, RequestBody gender, RequestBody password, RequestBody id,RequestBody latitude,RequestBody longitude, MultipartBody.Part image) {
         registerDetails = new MutableLiveData<>();
-        if (CommonUtils.isNetworkConnected(activity)) {
             apiInterface.registerUser(name, dob, gender, password, id,latitude,longitude,image).enqueue(new Callback<LoginRegisterPojo>() {
                 @Override
                 public void onResponse(Call<LoginRegisterPojo> call, Response<LoginRegisterPojo> response) {
-
                     if (response.body() != null) {
                         registerDetails.postValue(response.body());
                     }
@@ -160,11 +158,8 @@ public class VMRegisterUser extends ViewModel {
 
                 @Override
                 public void onFailure(Call<LoginRegisterPojo> call, Throwable t) {
-                    Toast.makeText(activity, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-
-        }
         return registerDetails;
     }
 
