@@ -22,4 +22,8 @@ public class AppConstants {
     public static final String CURRENT_LONG = "long";
     public static final String PHONE = "phn";
     public static final String COMT_POST_ID = "postId";
+    public static final String RUSER_NAME = "rn";
+    public static final String RGENDER = "gn";
+    public static final String RDOB = "rdob";
+    public static final String RPASS = "rpass";
 }
