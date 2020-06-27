@@ -166,10 +166,8 @@ public class HomePageFragment extends Fragment implements View.OnClickListener, 
 
         vmUserSetting = ViewModelProviders.of(this).get(VmUserSetting.class);
 
-        vmReceiveData = ViewModelProviders.of(getActivity()).get(VmReceiveData.class);
+        vmReceiveData = ViewModelProviders.of(this).get(VmReceiveData.class);
         swipeItemsViewModelClass = ViewModelProviders.of(HomePageFragment.this).get(SwipeItemsViewModelClass.class);
-
-//        loginRegisterPojo = App.getAppPreference().getUserDetails(AppConstants.REGISTER_DETAILS,LoginRegisterPojo.class);
 
 
         findIds(view);
@@ -298,13 +296,15 @@ public class HomePageFragment extends Fragment implements View.OnClickListener, 
             }
         });
 
+
         cardStackView.setLayoutManager(manager);
-        manager.setVisibleCount(4);
+        manager.setStackFrom(StackFrom.Bottom);
+        manager.setVisibleCount(3);
         manager.setTranslationInterval(8f);
         manager.setMaxDegree(16f);
         manager.setDirections(Direction.FREEDOM);
         manager.setSwipeThreshold(0.3f);
-        manager.setStackFrom(StackFrom.Bottom);
+        manager.setScaleInterval(0.95f);
 
         superLikeCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -747,14 +747,7 @@ public class HomePageFragment extends Fragment implements View.OnClickListener, 
 //            tv_money.setTextColor(Color.parseColor("#fc5068"));
 //
 //        }
-        confirmdailog.findViewById(R.id.iv_close).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view1) {
-
-                dailogbox.dismiss();
-
-            }
-        });
+        confirmdailog.findViewById(R.id.iv_close).setOnClickListener(view1 -> dailogbox.dismiss());
         confirmdailog.findViewById(R.id.btn_Step_continue_with_pay).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {

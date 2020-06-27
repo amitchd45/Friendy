@@ -1,23 +1,18 @@
-package com.solutions.friendy.Fragments;
+package com.solutions.friendy.ui;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,6 +22,7 @@ import android.widget.Toast;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.solutions.friendy.Adapters.AdapterPhotoDemo;
 import com.solutions.friendy.App;
+import com.solutions.friendy.Fragments.UploadRealPhotoFragmentDirections;
 import com.solutions.friendy.Models.LoginRegisterPojo;
 import com.solutions.friendy.R;
 import com.solutions.friendy.Retrofit.AppConstants;
@@ -38,11 +34,9 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-
-public class ProfileImageUploadFragment extends Fragment {
+public class UploadRealPhotoActivity extends AppCompatActivity {
 
     private LinearLayout ll_take_photo;
-    private View view;
     private ImageView iv_back, iv_take_photo;
     private TextView tv_title;
     private Button btn_signup, btn_start;
@@ -55,20 +49,14 @@ public class ProfileImageUploadFragment extends Fragment {
     private String genderStr, nameStr, dobStr, passwordStr, id, fb_social_id, fb_userName, fb_phone, fb_image, fb_email, fb_loginType;
     private String imagePath = "";
     private File storeImage;
-
+    private Activity activity=UploadRealPhotoActivity.this;
     private ProgressDialog progressDialog;
     private VMRegisterUser vmRegisterUser;
 
-
-    public ProfileImageUploadFragment() {
-        // Required empty public constructor
-    }
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_profile_image_upload, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_upload_real_photo);
 
         vmRegisterUser = ViewModelProviders.of(this).get(VMRegisterUser.class);
 
@@ -78,17 +66,15 @@ public class ProfileImageUploadFragment extends Fragment {
         genderStr = App.getAppPreference().GetString(AppConstants.RGENDER);
         id = App.getAppPreference().GetString("id");
 
-        init(view);
+        init();
 
-        progressDialog=new ProgressDialog(getActivity());
+        progressDialog=new ProgressDialog(activity);
         progressDialog.setMessage("Please wait...");
         progressDialog.setCanceledOnTouchOutside(false);
-
-        return view;
     }
 
-    private void init(View view) {
-        ll_take_photo=view.findViewById(R.id.ll_take_photo);
+    private void init() {
+        ll_take_photo=findViewById(R.id.ll_take_photo);
         ll_take_photo.setOnClickListener(task->{
             ImagePicker.Companion.with(this)
                     .crop()	    			//Crop image(Optional), Check Customization for more option
@@ -96,29 +82,27 @@ public class ProfileImageUploadFragment extends Fragment {
                     .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
                     .start();
         });
-        iv_take_photo=view.findViewById(R.id.iv_take_photo);
+        iv_take_photo=findViewById(R.id.iv_take_photo);
 
-        rv_photoDemo = view.findViewById(R.id.rv_photoDemo);
+        rv_photoDemo = findViewById(R.id.rv_photoDemo);
 
-        tv_title = view.findViewById(R.id.tv_title);
+        tv_title = findViewById(R.id.tv_title);
         tv_title.setText("Upload Your Real Photo");
 
-        iv_back = view.findViewById(R.id.iv_back);
+        iv_back = findViewById(R.id.iv_back);
         iv_back.setOnClickListener(task->{
-            getActivity().onBackPressed();
+            onBackPressed();
         });
 
-        btn_start = view.findViewById(R.id.btn_start);
+        btn_start = findViewById(R.id.btn_start);
         btn_start.setOnClickListener(task->{
             validation();
         });
-
-
     }
 
     private void validation() {
         if (imagePath.equalsIgnoreCase("")) {
-            Toast.makeText(getActivity(), "Please Upload Profile image", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Please Upload Profile image", Toast.LENGTH_SHORT).show();
         } else {
             register();
         }
@@ -143,7 +127,7 @@ public class ProfileImageUploadFragment extends Fragment {
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), storeImage);
         body = MultipartBody.Part.createFormData("image", storeImage.getName(), requestFile);
 
-        vmRegisterUser.registerResults(getActivity(), nameRequestBody, dobRequestBody, genderRequestBody, passwordRequestBody, idRequestBody, latitudeRequestBody, longitudeRequestBody, body).observe(getActivity(), new Observer<LoginRegisterPojo>() {
+        vmRegisterUser.registerResults(activity, nameRequestBody, dobRequestBody, genderRequestBody, passwordRequestBody, idRequestBody, latitudeRequestBody, longitudeRequestBody, body).observe(UploadRealPhotoActivity.this, new Observer<LoginRegisterPojo>() {
             @Override
             public void onChanged(LoginRegisterPojo loginRegisterPojo) {
                 if (loginRegisterPojo.getSuccess().equalsIgnoreCase("1")) {
@@ -154,11 +138,12 @@ public class ProfileImageUploadFragment extends Fragment {
 
                     App.getAppPreference().saveUserDetails(AppConstants.REGISTER_DETAILS, loginRegisterPojo);
                     App.getAppPreference().SaveString(AppConstants.TOKEN, "1");
-                    NavDirections navDirections = UploadRealPhotoFragmentDirections.actionUploadRealPhotoFragmentToHomePageFragment();
-                    Navigation.findNavController(view).navigate(navDirections);
+
+                    startActivity(new Intent(UploadRealPhotoActivity.this,HomeActivity.class));
+                    finishAffinity();
 
                 } else {
-                    Toast.makeText(getContext(), loginRegisterPojo.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, loginRegisterPojo.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -175,7 +160,7 @@ public class ProfileImageUploadFragment extends Fragment {
             imagePath=resultUri.getPath();
 
         }else {
-            Toast.makeText(getActivity(), "Task Cancelled", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Task Cancelled", Toast.LENGTH_SHORT).show();
         }
     }
 }

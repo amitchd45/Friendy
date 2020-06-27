@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.solutions.friendy.Fragments.OtpFragment">
+    tools:context=".ui.OtpActivity">
 
     <include layout="@layout/topbar" />
 
@@ -163,4 +163,5 @@
         </LinearLayout>
 
     </RelativeLayout>
+
 </LinearLayout>

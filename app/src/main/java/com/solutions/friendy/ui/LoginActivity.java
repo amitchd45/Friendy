@@ -1,5 +1,14 @@
-package com.solutions.friendy.Fragments;
+package com.solutions.friendy.ui;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.lifecycle.Observer;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -12,40 +21,22 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.NavDirections;
-import androidx.navigation.Navigation;
-import androidx.viewpager.widget.ViewPager;
-
-import com.BV.LinearGradient.BuildConfig;
 import com.cometchat.pro.core.CometChat;
 import com.cometchat.pro.exceptions.CometChatException;
 import com.cometchat.pro.models.User;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookAuthorizationException;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.LoggingBehavior;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.common.ConnectionResult;
@@ -62,6 +53,8 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.omninos.util_data.CommonUtils;
 import com.solutions.friendy.Adapters.SwipePagerAdapter;
 import com.solutions.friendy.App;
+import com.solutions.friendy.Fragments.LoginFragment;
+import com.solutions.friendy.Fragments.LoginFragmentDirections;
 import com.solutions.friendy.Models.CheckSocialId;
 import com.solutions.friendy.Models.SocialLoginPojo;
 import com.solutions.friendy.R;
@@ -69,7 +62,6 @@ import com.solutions.friendy.Retrofit.AppConstants;
 import com.solutions.friendy.Retrofit.StringContract;
 import com.solutions.friendy.ViewModel.VMRegisterUser;
 
-import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -78,14 +70,7 @@ import java.util.Arrays;
 
 import me.relex.circleindicator.CircleIndicator;
 
-import static co.apptailor.googlesignin.RNGoogleSigninModule.RC_SIGN_IN;
-import static com.facebook.FacebookSdk.getApplicationContext;
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class LoginFragment extends Fragment implements View.OnClickListener,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener  {
-    private View view;
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     private Button btn_phone_no, btn_continue_with_fb;
     private GoogleApiClient googleApiClient;
     private CallbackManager callbackManager;
@@ -101,59 +86,45 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
     int currentPage = 0;
     int NUM_PAGES = 0;
     private SwipePagerAdapter swipePagerAdapter;
-    Context context;
+    private LoginActivity activity=LoginActivity.this;
     private ProgressDialog progressDialog;
 
-
-    public LoginFragment() {
-        // Required empty public constructor
-    }
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_login, container, false);
-        vmRegisterUser= ViewModelProviders.of(getActivity()).get(VMRegisterUser.class);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
         turnGPSOn();
 
-        findIds(view);
-        FacebookSdk.sdkInitialize(getActivity().getApplication());
+        findIds();
+        FacebookSdk.sdkInitialize(this.getApplication());
 
         setSwipe();
 
-        progressDialog = new ProgressDialog(getActivity());
+        progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("Please Wait");
         progressDialog.setMessage("Loading...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.setCancelable(false);
-
-        return view;
     }
 
     private void setSwipe() {
 
-        swipePagerAdapter = new SwipePagerAdapter(getChildFragmentManager());
-
+        swipePagerAdapter = new SwipePagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(swipePagerAdapter);
-
         sliderDotspanel.setViewPager(viewPager);
         swipePagerAdapter.notifyDataSetChanged();
 
     }
 
-    private void findIds(View view) {
-
-
-        btn_continue_with_fb = view.findViewById(R.id.btn_continue_with_fb);
+    private void findIds() {
+        btn_continue_with_fb =findViewById(R.id.btn_continue_with_fb);
         btn_continue_with_fb.setOnClickListener(this);
 
-        btn_phone_no = view.findViewById(R.id.btn_phone_no);
+        btn_phone_no =findViewById(R.id.btn_phone_no);
         btn_phone_no.setOnClickListener(this);
-        viewPager = view.findViewById(R.id.viewPager);
-        sliderDotspanel = view.findViewById(R.id.SliderDots);
+        viewPager = findViewById(R.id.viewPager);
+        sliderDotspanel =findViewById(R.id.SliderDots);
 
     }
 
@@ -161,20 +132,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_phone_no:
-                NavDirections navDirections = LoginFragmentDirections.actionLoginFragmentToPhoneNumberFragment();
-                Navigation.findNavController(view).navigate(navDirections);
+                startActivity(new Intent(LoginActivity.this,PhoneNumberActivity.class));
                 break;
 
             case R.id.btn_continue_with_fb:
-
-//                if (idb!=null){
-//                    NavDirections navDirections1=LoginFragmentDirections.actionLoginFragmentToHomePageFragment();
-//                    Navigation.findNavController(view).navigate(navDirections1);
-//                }else {
-                    facebookBtn();
-//                }
-
-
+                facebookBtn();
                 break;
         }
     }
@@ -183,15 +145,15 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
     private void facebookBtn() {
         progressDialog.show();
 
-        if (CommonUtils.isNetworkConnected(getActivity())){
-            FacebookSdk.sdkInitialize(getActivity());
+        if (CommonUtils.isNetworkConnected(activity)){
+            FacebookSdk.sdkInitialize(activity);
 
             boolean loggedOut = AccessToken.getCurrentAccessToken() == null;
 
             if (!loggedOut) {
                 getUserProfile(AccessToken.getCurrentAccessToken());
             }
-            FacebookSdk.sdkInitialize(getActivity());
+            FacebookSdk.sdkInitialize(activity);
             callbackManager = CallbackManager.Factory.create();
             LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email", "public_profile"));
             LoginManager.getInstance().registerCallback(callbackManager,new FacebookCallback<LoginResult>() {
@@ -207,7 +169,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
                 public void onCancel() {
                     // App code
                     progressDialog.dismiss();
-                    Toast.makeText(getActivity(), "Cancel", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Cancel", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -215,14 +177,15 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
                 public void onError(FacebookException exception) {
                     // App code
                     progressDialog.dismiss();
-                    Toast.makeText(getActivity(), exception.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, exception.getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
             });
 
-        }else {
+        }
+        else {
             progressDialog.dismiss();
-            Toast.makeText(getActivity(), "Check internet.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Check internet.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -290,21 +253,21 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
     }
 
     private void  CheckSocialId(){
-        vmRegisterUser.getSocialData(getActivity(),socialId,"1","android").observe(LoginFragment.this, new Observer<CheckSocialId>() {
+        vmRegisterUser.getSocialData(activity,socialId,"1","android").observe(LoginActivity.this, new Observer<CheckSocialId>() {
             @Override
             public void onChanged(CheckSocialId checkSocialId) {
                 if(checkSocialId.getSuccess().equalsIgnoreCase("1")){
-                    Toast.makeText(getActivity(), checkSocialId.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, checkSocialId.getMessage(), Toast.LENGTH_SHORT).show();
                     App.getAppPreference().saveUserDetails(AppConstants.LOGIN_DETAIL, checkSocialId);
                     App.getAppPreference().SaveString(AppConstants.TOKEN, "1");
 
                     progressDialog.dismiss();
 
-                    NavDirections directions=LoginFragmentDirections.actionLoginFragmentToHomePageFragment();
-                    Navigation.findNavController(getView()).navigate(directions);
+//                    NavDirections directions=LoginFragmentDirections.actionLoginFragmentToHomePageFragment();
+//                    Navigation.findNavController(getView()).navigate(directions);
 
                 }else {
-                    Toast.makeText(getActivity(), checkSocialId.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, checkSocialId.getMessage(), Toast.LENGTH_SHORT).show();
                     App.getSinlton().setName(userName);
                     App.getSinlton().setPhone(phoneNumber);
                     App.getSinlton().setFb_image(userImage);
@@ -313,13 +276,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
                     App.getSinlton().setLoginType(loginType);
                     App.getSinlton().setCheckType("1");
 
-                    vmRegisterUser.getSocialLoginFacebook(getActivity(),App.getSinlton().getSocial_id(),"1","android",App.getSinlton().getName(),App.getSinlton().getPhone(),App.getSinlton().getFb_image(),App.getSinlton().getFb_email(),App.getSinlton().getLoginType()).observe(getActivity(), new Observer<SocialLoginPojo>() {
+                    vmRegisterUser.getSocialLoginFacebook(activity,App.getSinlton().getSocial_id(),"1","android",App.getSinlton().getName(),App.getSinlton().getPhone(),App.getSinlton().getFb_image(),App.getSinlton().getFb_email(),App.getSinlton().getLoginType()).observe(activity, new Observer<SocialLoginPojo>() {
                         @Override
                         public void onChanged(SocialLoginPojo socialLoginPojo) {
                             if (socialLoginPojo.getSuccess().equalsIgnoreCase("1")){
 
                                 App.getAppPreference().SaveString("id",socialLoginPojo.getDetails().getId());
-                                Toast.makeText(getActivity(), socialLoginPojo.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, socialLoginPojo.getMessage(), Toast.LENGTH_SHORT).show();
 
                                 String id=socialLoginPojo.getDetails().getId();
 
@@ -333,11 +296,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
                                         Log.d("createUser", user.toString());
 
                                         progressDialog.dismiss();
+//
+//                                        NavDirections navDirections = LoginFragmentDirections.actionLoginFragmentToHomePageFragment();
+//                                        Navigation.findNavController(view).navigate(navDirections);
 
-                                        NavDirections navDirections = LoginFragmentDirections.actionLoginFragmentToHomePageFragment();
-                                        Navigation.findNavController(view).navigate(navDirections);
-
-                                        Toast.makeText(getContext(), socialLoginPojo.getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(activity, socialLoginPojo.getMessage(), Toast.LENGTH_SHORT).show();
 
                                     }
 
@@ -349,7 +312,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
 
                             }
                             else {
-                                Toast.makeText(getActivity(), "facebook login failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "facebook login failed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -372,7 +335,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
     private void turnGPSOn() {
 
         if (googleApiClient == null) {
-            googleApiClient = new GoogleApiClient.Builder(getActivity())
+            googleApiClient = new GoogleApiClient.Builder(activity)
                     .addApi(LocationServices.API).addConnectionCallbacks(this)
                     .addOnConnectionFailedListener(this).build();
             googleApiClient.connect();
@@ -410,7 +373,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
                                 // Show the dialog by calling
                                 // startResolutionForResult(),
                                 // and check the result in onActivityResult().
-                                status.startResolutionForResult(getActivity(), 1000);
+                                status.startResolutionForResult(activity, 1000);
                             } catch (IntentSender.SendIntentException e) {
                                 // Ignore the error.
                             }
@@ -419,7 +382,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
                             // Location settings are not satisfied. However, we have
                             // no way to fix the
                             // settings so we won't show the dialog.
-                            Toast.makeText(getActivity(), "off", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "off", Toast.LENGTH_SHORT).show();
                             break;
                     }
                 }
@@ -430,18 +393,18 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
 
     private void checkPermissions() {
 
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.VIBRATE) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
+        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(activity,Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(activity,Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(activity, Manifest.permission.VIBRATE) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(activity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
         {
 
-            ActivityCompat.requestPermissions(getActivity(), new String[]{
+            ActivityCompat.requestPermissions(activity, new String[]{
                     Manifest.permission.CAMERA,
                     Manifest.permission.READ_CONTACTS,
                     Manifest.permission.RECORD_AUDIO,
@@ -479,7 +442,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
                         && !shouldShowRequestPermissionRationale(permissions[8]))) {
                     rationale();
                 } else {
-                    Toast.makeText(getActivity(), "Permission Not granted", Toast.LENGTH_LONG).show();
+                    Toast.makeText(activity, "Permission Not granted", Toast.LENGTH_LONG).show();
                     checkPermissions();
                 }
             }
@@ -490,9 +453,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
     void rationale() {
         AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            builder = new AlertDialog.Builder(getActivity(), android.R.style.Theme_Material_Light_Dialog_Alert);
+            builder = new AlertDialog.Builder(activity, android.R.style.Theme_Material_Light_Dialog_Alert);
         } else {
-            builder = new AlertDialog.Builder(getActivity());
+            builder = new AlertDialog.Builder(activity);
         }
         builder.setTitle("Mandatory Permissions")
                 .setMessage("Manually allow permissions in App settings")
@@ -500,7 +463,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Goog
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent();
                         intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                        Uri uri = Uri.fromParts("package", getActivity().getPackageName(), null);
+                        Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
                         intent.setData(uri);
                         startActivityForResult(intent, 1);
 

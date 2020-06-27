@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_homey"
+            android:icon="@drawable/ic_home_1"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_explore"
+            android:icon="@drawable/ic_explore"
+            android:title="Explore"/>
+        <item
+            android:id="@+id/nav_verification"
+            android:icon="@drawable/ic_list"
+            android:title="Explore"/>
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_settings"
+            android:title="Setting"/>
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help_24dp"
+            android:title="Help"/>
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_love_letter"
+            android:title="Setting"/>
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout"/>
+
+    </group>
+</menu>

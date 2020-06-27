@@ -1,8 +1,16 @@
-package com.solutions.friendy.Fragments;
+package com.solutions.friendy.ui;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,23 +19,13 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.NavDirections;
-import androidx.navigation.Navigation;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -36,19 +34,16 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.hbb20.CountryCodePicker;
 import com.solutions.friendy.App;
+import com.solutions.friendy.Fragments.PhoneNumberFragmentDirections;
 import com.solutions.friendy.Models.SentOtpPhone;
 import com.solutions.friendy.R;
 import com.solutions.friendy.Retrofit.AppConstants;
 import com.solutions.friendy.ViewModel.VMRegisterUser;
-import com.hbb20.CountryCodePicker;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class PhoneNumberFragment extends Fragment implements View.OnClickListener {
+public class PhoneNumberActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private View view;
     private EditText mPhone;
     private ImageView iv_back;
     private TextView tv_title;
@@ -58,52 +53,43 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
     private VMRegisterUser vmRegisterUser;
     private static final int PERMISSION_ID = 44;
     private FusedLocationProviderClient mFusedLocationClient;
-
-
-    public PhoneNumberFragment() {
-        // Required empty public constructor
-    }
-
+    private Activity activity = PhoneNumberActivity.this;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_phone_number, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_phone_number);
 
-        findIds(view);
-        vmRegisterUser = ViewModelProviders.of(getActivity()).get(VMRegisterUser.class);
+        findIds();
+        vmRegisterUser = ViewModelProviders.of(this).get(VMRegisterUser.class);
 
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(activity);
 
         getLastLocation();
-
-
-        return view;
     }
 
-    private void findIds(View view) {
-        tv_title = view.findViewById(R.id.tv_title);
+    private void findIds() {
+        tv_title = findViewById(R.id.tv_title);
         tv_title.setText("Phone Number");
 
-        iv_back = view.findViewById(R.id.iv_back);
+        iv_back = findViewById(R.id.iv_back);
         iv_back.setOnClickListener(this);
 
-        btn_continue = view.findViewById(R.id.btn_continue);
+        btn_continue = findViewById(R.id.btn_continue);
         btn_continue.setOnClickListener(this);
 
-        mPhone = view.findViewById(R.id.et_phone);
+        mPhone = findViewById(R.id.et_phone);
 
         mPhone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                Toast.makeText(getActivity(), "open", Toast.LENGTH_SHORT).show();
-                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                Toast.makeText(activity, "open", Toast.LENGTH_SHORT).show();
+                InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.showSoftInput(mPhone, InputMethodManager.SHOW_IMPLICIT);
             }
         });
 
-        countryCodePicker = view.findViewById(R.id.ccp);
+        countryCodePicker = findViewById(R.id.ccp);
         countryCodePicker.registerCarrierNumberEditText(mPhone);
 
     }
@@ -112,7 +98,7 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_back:
-                getActivity().onBackPressed();
+                activity.onBackPressed();
                 break;
 
             case R.id.btn_continue:
@@ -129,7 +115,7 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
             mPhone.setError("Enter Phone number");
         } else {
             code = countryCodePicker.getSelectedCountryCodeWithPlus();
-            vmRegisterUser.getPhoneResult(getActivity(), code + phone, "reg", "android", App.getAppPreference().GetString(AppConstants.LATITUDE), App.getAppPreference().GetString(AppConstants.LONGITUDE)).observe(getActivity(), new Observer<SentOtpPhone>() {
+            vmRegisterUser.getPhoneResult(activity, code + phone, "reg", "android", App.getAppPreference().GetString(AppConstants.LATITUDE), App.getAppPreference().GetString(AppConstants.LONGITUDE)).observe(PhoneNumberActivity.this, new Observer<SentOtpPhone>() {
                 @Override
                 public void onChanged(SentOtpPhone sentOtpPhone) {
 
@@ -142,9 +128,9 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
                         App.getSinlton().setOtp(sentOtpPhone.getDetails().getOtp());
                         App.getSinlton().setCheckUserExist("0");
 
-                        NavDirections navDirections = PhoneNumberFragmentDirections.actionPhoneNumberFragmentToOtpFragment();
-                        Navigation.findNavController(view).navigate(navDirections);
-                        Toast.makeText(getActivity(), sentOtpPhone.getMessage(), Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(PhoneNumberActivity.this,OtpActivity.class));
+                        finish();
+                        Toast.makeText(activity, sentOtpPhone.getMessage(), Toast.LENGTH_SHORT).show();
                     } else {
                         //new  exist or unVerified
                         App.getAppPreference().SaveString("id", sentOtpPhone.getDetails().getId());
@@ -154,9 +140,9 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
                         App.getSinlton().setOtp(sentOtpPhone.getDetails().getOtp());
                         App.getSinlton().setCheckUserExist("1");
 
-                        NavDirections navDirections = PhoneNumberFragmentDirections.actionPhoneNumberFragmentToOtpFragment();
-                        Navigation.findNavController(view).navigate(navDirections);
-                        Toast.makeText(getActivity(), sentOtpPhone.getMessage(), Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(PhoneNumberActivity.this,OtpActivity.class));
+                        finish();
+                        Toast.makeText(activity, sentOtpPhone.getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -168,7 +154,7 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
     private void getLastLocation() {
         if (checkPermissions()) {
             if (isLocationEnabled()) {
-                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
                     // here to request the missing permissions, and then overriding
@@ -194,7 +180,7 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
                         }
                 );
             } else {
-                Toast.makeText(getActivity(), "Turn on location", Toast.LENGTH_LONG).show();
+                Toast.makeText(activity, "Turn on location", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivity(intent);
             }
@@ -204,7 +190,7 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
     }
 
     @SuppressLint("MissingPermission")
-    private void requestNewLocationData(){
+    private void requestNewLocationData() {
 
         LocationRequest mLocationRequest = new LocationRequest();
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -212,7 +198,7 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
         mLocationRequest.setFastestInterval(0);
         mLocationRequest.setNumUpdates(1);
 
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(activity);
         mFusedLocationClient.requestLocationUpdates(
                 mLocationRequest, mLocationCallback,
                 Looper.myLooper()
@@ -225,15 +211,15 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
         public void onLocationResult(LocationResult locationResult) {
             Location mLastLocation = locationResult.getLastLocation();
 
-            App.getAppPreference().SaveString(AppConstants.LATITUDE,String.valueOf(mLastLocation.getLatitude()));
-            App.getAppPreference().SaveString(AppConstants.LONGITUDE,String.valueOf(mLastLocation.getLongitude()));
+            App.getAppPreference().SaveString(AppConstants.LATITUDE, String.valueOf(mLastLocation.getLatitude()));
+            App.getAppPreference().SaveString(AppConstants.LONGITUDE, String.valueOf(mLastLocation.getLongitude()));
 
         }
     };
 
     private boolean checkPermissions() {
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             return true;
         }
         return false;
@@ -241,14 +227,14 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
 
     private void requestPermissions() {
         ActivityCompat.requestPermissions(
-                getActivity(),
+                activity,
                 new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
                 PERMISSION_ID
         );
     }
 
     private boolean isLocationEnabled() {
-        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        LocationManager locationManager = (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
                 LocationManager.NETWORK_PROVIDER
         );
@@ -265,7 +251,7 @@ public class PhoneNumberFragment extends Fragment implements View.OnClickListene
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         if (checkPermissions()) {
             getLastLocation();

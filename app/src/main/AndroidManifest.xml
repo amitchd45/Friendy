@@ -37,7 +37,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,icon,theme,label">
-        <activity android:name=".Activity.UploadMomentsActivity"></activity>
+        <activity android:name=".ui.UploadRealPhotoActivity"></activity>
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.PasswordActivity" />
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.OtpActivity" />
+        <activity android:name=".ui.PhoneNumberActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.SplashScreenActivity" />
+        <activity android:name=".Activity.UploadMomentsActivity" />
         <activity android:name=".Activity.SecretActivity" />
         <activity android:name=".Activity.UserMomentsActivity" />
         <activity android:name=".Activity.ExplorActivity" />
