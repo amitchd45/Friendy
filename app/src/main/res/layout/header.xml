@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="@dimen/space10"
     android:orientation="vertical">
 
     <LinearLayout
@@ -25,12 +26,13 @@
             android:id="@+id/tv_setName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User"
+            android:text="Lorem Ipsum"
             style="@style/headingText"
             android:textColor="@android:color/white"
             android:padding="@dimen/space10"/>
 
         <TextView
+            android:visibility="gone"
             android:padding="@dimen/space10"
             android:id="@+id/iv_edit"
             android:layout_width="wrap_content"
@@ -41,6 +43,7 @@
             android:textColor="@android:color/white"/>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_my_privileges"
             android:layout_marginTop="@dimen/space10"
             android:layout_marginRight="@dimen/space30"

@@ -1006,7 +1006,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.nav_home:
+            case R.id.nav_profile:
 
                 break;
 

@@ -37,7 +37,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,icon,theme,label">
-        <activity android:name=".ui.UploadRealPhotoActivity"></activity>
+        <activity android:name=".ui.EditUserProfileActivity"></activity>
+        <activity android:name=".ui.ProfileActivity" />
+        <activity android:name=".ui.UploadRealPhotoActivity" />
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.PasswordActivity" />
         <activity android:name=".ui.RegisterActivity" />
